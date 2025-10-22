@@ -1,0 +1,35 @@
+{
+  "segments": [
+    {
+      "name": "Materiais de Construção",
+      "percentage": 32.5,
+      "value": 600375.00,
+      "color": "#00D4FF"
+    },
+    {
+      "name": "Pet Shops",
+      "percentage": 24.3,
+      "value": 448943.00,
+      "color": "#00FFA3"
+    },
+    {
+      "name": "Farmácias",
+      "percentage": 18.7,
+      "value": 345482.00,
+      "color": "#FFB800"
+    },
+    {
+      "name": "Padarias e Mercados",
+      "percentage": 15.2,
+      "value": 280820.00,
+      "color": "#8B5CF6"
+    },
+    {
+      "name": "Outros Segmentos",
+      "percentage": 9.3,
+      "value": 171880.00,
+      "color": "#6E7681"
+    }
+  ],
+  "totalValue": 1847500.00
+}

@@ -1,0 +1,36 @@
+{
+  "sellOutTotal": {
+    "currentMonth": 1847500.00,
+    "previousMonth": 1623400.00,
+    "variation": 13.8,
+    "currency": "BRL"
+  },
+  "marketShare": {
+    "percentage": 24.7,
+    "previousPercentage": 22.3,
+    "variation": 2.4,
+    "trend": "up"
+  },
+  "averageRupture": {
+    "percentage": 8.2,
+    "previousPercentage": 11.5,
+    "variation": -3.3,
+    "trend": "down",
+    "status": "good"
+  },
+  "newPDVs": {
+    "count": 47,
+    "previousCount": 38,
+    "variation": 9,
+    "trend": "up"
+  },
+  "topSellingProduct": {
+    "name": "Produto Premium X",
+    "volume": 3450,
+    "revenue": 345000.00
+  },
+  "criticalAlerts": {
+    "count": 3,
+    "severity": "medium"
+  }
+}

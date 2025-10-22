@@ -1,0 +1,216 @@
+@import './variables.scss';
+
+.industry-dashboard-page {
+  min-height: 100vh;
+  background: $bg-dark;
+  padding-bottom: $spacing-2xl;
+}
+
+.page-header {
+  padding: $spacing-2xl 0 $spacing-xl 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-md;
+  }
+  
+  h1 {
+    font-size: $font-size-3xl;
+    margin-bottom: $spacing-xs;
+    
+    @media (max-width: 768px) {
+      font-size: $font-size-2xl;
+    }
+  }
+  
+  p {
+    font-size: $font-size-lg;
+    color: $text-secondary;
+  }
+  
+  .date-badge {
+    padding: $spacing-sm $spacing-lg;
+    background: rgba($cyber-cyan, 0.1);
+    border: 1px solid $cyber-cyan;
+    border-radius: $radius-md;
+    color: $cyber-cyan;
+    font-weight: 600;
+    font-size: $font-size-sm;
+  }
+}
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: $spacing-lg;
+  margin-bottom: $spacing-2xl;
+}
+
+.kpi-card {
+  background: $bg-card;
+  border: 1px solid $border-subtle;
+  border-radius: $radius-md;
+  padding: $spacing-lg;
+  transition: $transition-smooth;
+  
+  &:hover {
+    border-color: $cyber-cyan;
+    box-shadow: $shadow-glow-cyan;
+    transform: translateY(-2px);
+  }
+  
+  .kpi-header {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-md;
+    
+    svg {
+      color: $cyber-cyan;
+    }
+    
+    .kpi-label {
+      font-size: $font-size-sm;
+      color: $text-secondary;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+  }
+  
+  .kpi-value {
+    font-size: $font-size-3xl;
+    font-weight: 800;
+    background: $gradient-accent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: $spacing-sm;
+  }
+  
+  .kpi-trend {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+    font-size: $font-size-sm;
+    font-weight: 600;
+    
+    &.positive {
+      color: $success-green;
+    }
+    
+    &.negative {
+      color: $error-red;
+    }
+  }
+}
+
+.charts-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: $spacing-lg;
+  margin-bottom: $spacing-2xl;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.chart-card {
+  background: $bg-card;
+  border: 1px solid $border-subtle;
+  border-radius: $radius-lg;
+  padding: $spacing-xl;
+  
+  .chart-header {
+    margin-bottom: $spacing-lg;
+    
+    h3 {
+      font-size: $font-size-xl;
+      margin-bottom: $spacing-xs;
+    }
+    
+    p {
+      font-size: $font-size-sm;
+      color: $text-secondary;
+    }
+  }
+}
+
+.top-products-section {
+  h3 {
+    font-size: $font-size-xl;
+    margin-bottom: $spacing-lg;
+  }
+  
+  .products-table {
+    background: $bg-card;
+    border: 1px solid $border-subtle;
+    border-radius: $radius-md;
+    overflow: hidden;
+    
+    .table-header,
+    .table-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: $spacing-md;
+      padding: $spacing-md $spacing-lg;
+      
+      @media (max-width: 768px) {
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: $spacing-sm;
+        padding: $spacing-sm $spacing-md;
+      }
+    }
+    
+    .table-header {
+      background: $bg-input;
+      font-size: $font-size-sm;
+      font-weight: 700;
+      color: $text-secondary;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid $border-subtle;
+    }
+    
+    .table-row {
+      border-bottom: 1px solid $border-subtle;
+      transition: $transition-fast;
+      
+      &:last-child {
+        border-bottom: none;
+      }
+      
+      &:hover {
+        background: $bg-card-hover;
+      }
+      
+      .product-name {
+        font-weight: 600;
+        color: $text-primary;
+      }
+      
+      .product-volume {
+        color: $text-secondary;
+      }
+      
+      .product-trend {
+        display: flex;
+        align-items: center;
+        gap: $spacing-xs;
+        font-weight: 600;
+        
+        &.positive {
+          color: $success-green;
+        }
+        
+        &.negative {
+          color: $error-red;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,210 @@
+@import './variables.scss';
+
+.retailer-page {
+  min-height: 100vh;
+  background: $bg-dark;
+  padding-bottom: $spacing-2xl;
+}
+
+.page-header {
+  padding: $spacing-2xl 0 $spacing-xl 0;
+  
+  h1 {
+    font-size: $font-size-3xl;
+    margin-bottom: $spacing-xs;
+    
+    @media (max-width: 768px) {
+      font-size: $font-size-2xl;
+    }
+  }
+  
+  p {
+    font-size: $font-size-lg;
+    color: $text-secondary;
+  }
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: $spacing-lg;
+  margin-bottom: $spacing-2xl;
+}
+
+.stat-card {
+  background: $bg-card;
+  border: 1px solid $border-subtle;
+  border-radius: $radius-md;
+  padding: $spacing-lg;
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  transition: $transition-smooth;
+  
+  &:hover {
+    border-color: $cyber-cyan;
+    box-shadow: $shadow-glow-cyan;
+    transform: translateY(-2px);
+  }
+  
+  .stat-icon {
+    width: 60px;
+    height: 60px;
+    background: $gradient-card;
+    border-radius: $radius-md;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    svg {
+      color: $cyber-cyan;
+    }
+  }
+  
+  .stat-content {
+    flex: 1;
+  }
+  
+  .stat-value {
+    font-size: $font-size-3xl;
+    font-weight: 800;
+    color: $text-primary;
+    line-height: 1;
+    margin-bottom: $spacing-xs;
+  }
+  
+  .stat-label {
+    font-size: $font-size-sm;
+    color: $text-secondary;
+    margin-bottom: 4px;
+  }
+  
+  .stat-trend {
+    font-size: $font-size-sm;
+    color: $success-green;
+    font-weight: 600;
+  }
+}
+
+.main-action-card {
+  background: $gradient-card, $bg-card;
+  border: 1px solid $border-subtle;
+  border-radius: $radius-lg;
+  padding: $spacing-2xl;
+  text-align: center;
+  margin-bottom: $spacing-2xl;
+  
+  .action-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    background: $gradient-accent;
+    border-radius: 50%;
+    margin-bottom: $spacing-lg;
+    
+    svg {
+      color: $navy-deep;
+    }
+  }
+  
+  h2 {
+    font-size: $font-size-2xl;
+    margin-bottom: $spacing-md;
+  }
+  
+  p {
+    max-width: 600px;
+    margin: 0 auto $spacing-xl auto;
+    font-size: $font-size-base;
+    line-height: 1.6;
+  }
+  
+  .btn-action-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-sm;
+    padding: $spacing-md $spacing-2xl;
+    background: $gradient-accent;
+    border: none;
+    border-radius: $radius-md;
+    color: $navy-deep;
+    font-size: $font-size-lg;
+    font-weight: 700;
+    cursor: pointer;
+    transition: $transition-smooth;
+    
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: $shadow-glow-cyan;
+    }
+  }
+}
+
+.recent-activity {
+  h3 {
+    font-size: $font-size-xl;
+    margin-bottom: $spacing-lg;
+  }
+  
+  .activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+  
+  .activity-item {
+    background: $bg-card;
+    border: 1px solid $border-subtle;
+    border-radius: $radius-md;
+    padding: $spacing-lg;
+    display: flex;
+    align-items: center;
+    gap: $spacing-lg;
+    transition: $transition-smooth;
+    
+    &:hover {
+      border-color: $border-emphasis;
+      background: $bg-card-hover;
+    }
+    
+    .activity-date {
+      font-size: $font-size-sm;
+      font-weight: 700;
+      color: $cyber-cyan;
+      min-width: 60px;
+    }
+    
+    .activity-content {
+      flex: 1;
+    }
+    
+    .activity-title {
+      font-size: $font-size-base;
+      font-weight: 600;
+      color: $text-primary;
+      margin-bottom: 4px;
+    }
+    
+    .activity-meta {
+      font-size: $font-size-sm;
+      color: $text-secondary;
+    }
+    
+    .activity-status {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      
+      &.success {
+        background: rgba($success-green, 0.2);
+        color: $success-green;
+      }
+    }
+  }
+}

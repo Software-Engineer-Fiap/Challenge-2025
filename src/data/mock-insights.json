@@ -1,0 +1,108 @@
+{
+  "insights": [
+    {
+      "id": "insight-001",
+      "type": "opportunity",
+      "severity": "high",
+      "title": "Crescimento Acelerado na Região Nordeste",
+      "description": "O Produto Premium X apresenta aumento de 30% no Sell-Out na região Nordeste nos últimos 30 dias.",
+      "suggestion": "Antecipar campanha de Trade Marketing na área para consolidar o crescimento. Considere aumentar o Sell-In para evitar rupturas.",
+      "region": "Nordeste",
+      "product": "Produto Premium X",
+      "impact": "high",
+      "tags": ["trade-marketing", "crescimento", "sell-in"],
+      "dateGenerated": "2025-02-15T10:30:00Z"
+    },
+    {
+      "id": "insight-002",
+      "type": "alert",
+      "severity": "critical",
+      "title": "Ruptura Crítica em PDVs Estratégicos",
+      "description": "Ruptura de estoque do Produto Essencial Y identificada em 15 PDVs do segmento Padaria na região Sul.",
+      "suggestion": "Enviar Sell-In de reposição urgente. Estabelecer comunicação direta com distribuidores para priorizar estes pontos.",
+      "region": "Sul",
+      "product": "Produto Essencial Y",
+      "impact": "critical",
+      "tags": ["ruptura", "sell-in", "urgente"],
+      "dateGenerated": "2025-02-14T14:45:00Z"
+    },
+    {
+      "id": "insight-003",
+      "type": "expansion",
+      "severity": "medium",
+      "title": "Oportunidade de Expansão de Mix",
+      "description": "O varejo 'ABC Pet Shop' em São Paulo vendeu 50% de seus produtos no último mês, mas não possui o item 'Ração Premium Z' em estoque.",
+      "suggestion": "Propor expansão de mix com o produto 'Ração Premium Z'. PDV tem perfil de consumidores premium compatível.",
+      "region": "Sudeste",
+      "product": "Ração Premium Z",
+      "impact": "medium",
+      "tags": ["mix", "cross-sell", "premium"],
+      "dateGenerated": "2025-02-13T09:15:00Z"
+    },
+    {
+      "id": "insight-004",
+      "type": "competitive",
+      "severity": "medium",
+      "title": "Perda de Share em Segmento Chave",
+      "description": "Redução de 5% no Market Share no segmento Materiais de Construção em Janeiro, possivelmente devido à entrada de novo concorrente.",
+      "suggestion": "Analisar estratégia de precificação e considerar ações promocionais para recuperar posicionamento. Monitorar concorrência.",
+      "region": "Nacional",
+      "product": "Linha Construção",
+      "impact": "medium",
+      "tags": ["concorrência", "precificação", "market-share"],
+      "dateGenerated": "2025-02-12T16:00:00Z"
+    },
+    {
+      "id": "insight-005",
+      "type": "opportunity",
+      "severity": "low",
+      "title": "Sazonalidade Detectada - Pet Shops",
+      "description": "Aumento histórico de 40% nas vendas de produtos pet em Março. Padrão identificado nos últimos 3 anos.",
+      "suggestion": "Planejar campanha sazonal e garantir estoque adicional para atender demanda. Considerar kits promocionais.",
+      "region": "Nacional",
+      "product": "Linha Pet",
+      "impact": "medium",
+      "tags": ["sazonalidade", "planejamento", "estoque"],
+      "dateGenerated": "2025-02-11T11:20:00Z"
+    },
+    {
+      "id": "insight-006",
+      "type": "performance",
+      "severity": "low",
+      "title": "Performance Superior de Novo PDV",
+      "description": "PDV 'Farmácia Vida Nova' em Belo Horizonte superou previsão de vendas em 120% no primeiro mês de operação.",
+      "suggestion": "Replicar estratégia de ativação e mix de produtos em novos PDVs similares. Considerar como case de sucesso.",
+      "region": "Sudeste",
+      "product": "Mix Completo",
+      "impact": "low",
+      "tags": ["performance", "best-practice", "ativação"],
+      "dateGenerated": "2025-02-10T08:30:00Z"
+    },
+    {
+      "id": "insight-007",
+      "type": "alert",
+      "severity": "medium",
+      "title": "Concentração de Vendas em Poucos PDVs",
+      "description": "70% do volume de vendas da região Centro-Oeste está concentrado em apenas 8 PDVs. Risco de dependência alta.",
+      "suggestion": "Diversificar portfólio de clientes na região. Prospectar novos PDVs médios para reduzir risco de concentração.",
+      "region": "Centro-Oeste",
+      "product": "Todos",
+      "impact": "medium",
+      "tags": ["risco", "diversificação", "prospecção"],
+      "dateGenerated": "2025-02-09T13:50:00Z"
+    },
+    {
+      "id": "insight-008",
+      "type": "opportunity",
+      "severity": "high",
+      "title": "Canal Digital em Crescimento",
+      "description": "PDVs com presença digital (e-commerce/WhatsApp) apresentam vendas 35% superiores à média. Apenas 40% dos PDVs possuem canal digital.",
+      "suggestion": "Incentivar e apoiar PDVs na digitalização. Considerar programa de capacitação e ferramentas de venda online.",
+      "region": "Nacional",
+      "product": "Todos",
+      "impact": "high",
+      "tags": ["digital", "e-commerce", "capacitação"],
+      "dateGenerated": "2025-02-08T15:10:00Z"
+    }
+  ]
+}

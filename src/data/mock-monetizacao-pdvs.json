@@ -1,0 +1,91 @@
+{
+  "potentialPDVs": [
+    {
+      "id": "pdv-prospect-001",
+      "name": "Pet Center Vila Mariana",
+      "segment": "Pet Shop",
+      "city": "São Paulo",
+      "state": "SP",
+      "region": "Sudeste",
+      "estimatedMonthlyVolume": 45000.00,
+      "profileScore": 92,
+      "profileMatch": "Premium",
+      "connectionStatus": "not_connected",
+      "potentialProducts": ["Ração Premium Z", "Produto Premium X"],
+      "competitorPresence": true,
+      "distance": "2.3 km",
+      "lastContact": null
+    },
+    {
+      "id": "pdv-prospect-002",
+      "name": "Drogaria Saúde Total",
+      "segment": "Farmácia",
+      "city": "Belo Horizonte",
+      "state": "MG",
+      "region": "Sudeste",
+      "estimatedMonthlyVolume": 67000.00,
+      "profileScore": 88,
+      "profileMatch": "Alto Volume",
+      "connectionStatus": "not_connected",
+      "potentialProducts": ["Suplemento Vital", "Produto Essencial Y"],
+      "competitorPresence": false,
+      "distance": "1.1 km",
+      "lastContact": "2025-01-15"
+    },
+    {
+      "id": "pdv-prospect-003",
+      "name": "Constrular Materiais",
+      "segment": "Construção",
+      "city": "Curitiba",
+      "state": "PR",
+      "region": "Sul",
+      "estimatedMonthlyVolume": 120000.00,
+      "profileScore": 95,
+      "profileMatch": "Estratégico",
+      "connectionStatus": "not_connected",
+      "potentialProducts": ["Kit Construção Pro", "Produto Premium X"],
+      "competitorPresence": true,
+      "distance": "0.8 km",
+      "lastContact": null
+    },
+    {
+      "id": "pdv-prospect-004",
+      "name": "Mercado e Padaria Pão Dourado",
+      "segment": "Mercado",
+      "city": "Recife",
+      "state": "PE",
+      "region": "Nordeste",
+      "estimatedMonthlyVolume": 32000.00,
+      "profileScore": 78,
+      "profileMatch": "Médio",
+      "connectionStatus": "not_connected",
+      "potentialProducts": ["Produto Essencial Y"],
+      "competitorPresence": false,
+      "distance": "3.5 km",
+      "lastContact": "2024-12-10"
+    },
+    {
+      "id": "pdv-prospect-005",
+      "name": "Agropet Goiânia",
+      "segment": "Pet Shop",
+      "city": "Goiânia",
+      "state": "GO",
+      "region": "Centro-Oeste",
+      "estimatedMonthlyVolume": 54000.00,
+      "profileScore": 85,
+      "profileMatch": "Premium",
+      "connectionStatus": "invited",
+      "potentialProducts": ["Ração Premium Z", "Produto Premium X"],
+      "competitorPresence": true,
+      "distance": "4.2 km",
+      "lastContact": "2025-02-10"
+    }
+  ],
+  "summary": {
+    "totalProspects": 120,
+    "highPriorityCount": 35,
+    "estimatedTotalRevenue": 5400000.00,
+    "topRegion": "Sudeste",
+    "topSegment": "Construção"
+  }
+}

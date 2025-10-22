@@ -1,0 +1,314 @@
+@import './variables.scss';
+
+.insights-page {
+  min-height: 100vh;
+  background: $bg-dark;
+  padding-bottom: $spacing-2xl;
+}
+
+.insights-count {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  
+  .count-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    background: $gradient-accent;
+    border-radius: $radius-md;
+    color: $navy-deep;
+    font-size: $font-size-xl;
+    font-weight: 800;
+  }
+  
+  .count-label {
+    font-size: $font-size-sm;
+    color: $text-secondary;
+  }
+}
+
+.filters-section {
+  background: $bg-card;
+  border: 1px solid $border-subtle;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-2xl;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-xl;
+  align-items: center;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .filter-group {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    
+    svg {
+      color: $cyber-cyan;
+    }
+    
+    .filter-label {
+      font-size: $font-size-sm;
+      color: $text-secondary;
+      font-weight: 600;
+    }
+    
+    .filter-buttons {
+      display: flex;
+      gap: $spacing-xs;
+      flex-wrap: wrap;
+      
+      button {
+        padding: $spacing-xs $spacing-md;
+        background: transparent;
+        border: 1px solid $border-subtle;
+        color: $text-secondary;
+        border-radius: $radius-sm;
+        font-size: $font-size-sm;
+        font-weight: 500;
+        cursor: pointer;
+        transition: $transition-fast;
+        
+        &:hover {
+          border-color: $cyber-cyan;
+          color: $cyber-cyan;
+        }
+        
+        &.active {
+          background: rgba($cyber-cyan, 0.1);
+          border-color: $cyber-cyan;
+          color: $cyber-cyan;
+        }
+      }
+    }
+    
+    .filter-select {
+      padding: $spacing-xs $spacing-md;
+      background: $bg-input;
+      border: 1px solid $border-subtle;
+      border-radius: $radius-sm;
+      color: $text-primary;
+      font-size: $font-size-sm;
+      cursor: pointer;
+      transition: $transition-fast;
+      
+      &:focus {
+        outline: none;
+        border-color: $cyber-cyan;
+      }
+    }
+  }
+}
+
+.insights-list {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+}
+
+.insight-card {
+  background: $bg-card;
+  border: 1px solid $border-subtle;
+  border-left: 4px solid $border-subtle;
+  border-radius: $radius-md;
+  padding: $spacing-xl;
+  transition: $transition-smooth;
+  
+  &:hover {
+    background: $bg-card-hover;
+    transform: translateX(4px);
+  }
+  
+  &.success {
+    border-left-color: $success-green;
+    
+    .insight-icon {
+      background: rgba($success-green, 0.1);
+      
+      svg {
+        color: $success-green;
+      }
+    }
+  }
+  
+  &.error {
+    border-left-color: $error-red;
+    
+    .insight-icon {
+      background: rgba($error-red, 0.1);
+      
+      svg {
+        color: $error-red;
+      }
+    }
+  }
+  
+  &.info {
+    border-left-color: $cyber-cyan;
+    
+    .insight-icon {
+      background: rgba($cyber-cyan, 0.1);
+      
+      svg {
+        color: $cyber-cyan;
+      }
+    }
+  }
+  
+  &.warning {
+    border-left-color: $warning-amber;
+    
+    .insight-icon {
+      background: rgba($warning-amber, 0.1);
+      
+      svg {
+        color: $warning-amber;
+      }
+    }
+  }
+  
+  .insight-header {
+    display: flex;
+    gap: $spacing-lg;
+    margin-bottom: $spacing-lg;
+    
+    .insight-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: $radius-md;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    
+    .insight-meta {
+      flex: 1;
+      
+      .meta-badges {
+        display: flex;
+        gap: $spacing-xs;
+        margin-bottom: $spacing-sm;
+        flex-wrap: wrap;
+        
+        .badge {
+          padding: 4px $spacing-sm;
+          border-radius: $radius-sm;
+          font-size: $font-size-xs;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          
+          &.badge-error {
+            background: rgba($error-red, 0.2);
+            color: $error-red;
+          }
+          
+          &.badge-warning {
+            background: rgba($warning-amber, 0.2);
+            color: $warning-amber;
+          }
+          
+          &.badge-info {
+            background: rgba($cyber-cyan, 0.2);
+            color: $cyber-cyan;
+          }
+          
+          &.badge-default {
+            background: rgba($text-muted, 0.2);
+            color: $text-muted;
+          }
+          
+          &.badge-region {
+            background: rgba($text-secondary, 0.1);
+            color: $text-secondary;
+          }
+        }
+      }
+      
+      h3 {
+        font-size: $font-size-xl;
+        color: $text-primary;
+      }
+    }
+  }
+  
+  .insight-content {
+    .insight-section {
+      margin-bottom: $spacing-md;
+      
+      strong {
+        display: block;
+        color: $text-primary;
+        font-size: $font-size-sm;
+        margin-bottom: $spacing-xs;
+      }
+      
+      p {
+        color: $text-secondary;
+        line-height: 1.6;
+      }
+      
+      &.suggestion {
+        background: rgba($cyber-cyan, 0.05);
+        padding: $spacing-md;
+        border-radius: $radius-sm;
+        border-left: 3px solid $cyber-cyan;
+      }
+    }
+    
+    .insight-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: $spacing-lg;
+      padding-top: $spacing-md;
+      border-top: 1px solid $border-subtle;
+      flex-wrap: wrap;
+      gap: $spacing-md;
+      
+      .insight-tags {
+        display: flex;
+        gap: $spacing-xs;
+        flex-wrap: wrap;
+        
+        .tag {
+          padding: 4px $spacing-sm;
+          background: rgba($text-muted, 0.1);
+          border-radius: $radius-sm;
+          font-size: $font-size-xs;
+          color: $text-muted;
+        }
+      }
+      
+      .insight-date {
+        font-size: $font-size-xs;
+        color: $text-muted;
+      }
+    }
+  }
+}
+
+.empty-state {
+  text-align: center;
+  padding: $spacing-2xl;
+  color: $text-secondary;
+  
+  svg {
+    color: $text-muted;
+    margin-bottom: $spacing-lg;
+  }
+  
+  h3 {
+    font-size: $font-size-xl;
+    margin-bottom: $spacing-sm;
+  }
+}

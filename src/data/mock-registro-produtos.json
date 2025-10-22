@@ -1,0 +1,44 @@
+{
+  "products": [
+    {
+      "id": "prod-001",
+      "name": "Produto Premium X",
+      "category": "Premium",
+      "sku": "PPX-1000",
+      "unitPrice": 100.00,
+      "activeInInventory": true
+    },
+    {
+      "id": "prod-002",
+      "name": "Produto Essencial Y",
+      "category": "Essencial",
+      "sku": "PEY-2000",
+      "unitPrice": 45.00,
+      "activeInInventory": true
+    },
+    {
+      "id": "prod-003",
+      "name": "Ração Premium Z",
+      "category": "Pet",
+      "sku": "RPZ-3000",
+      "unitPrice": 85.00,
+      "activeInInventory": true
+    },
+    {
+      "id": "prod-004",
+      "name": "Kit Construção Pro",
+      "category": "Construção",
+      "sku": "KCP-4000",
+      "unitPrice": 250.00,
+      "activeInInventory": true
+    },
+    {
+      "id": "prod-005",
+      "name": "Suplemento Vital",
+      "category": "Farmácia",
+      "sku": "SVT-5000",
+      "unitPrice": 65.00,
+      "activeInInventory": true
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "data": [
+    {
+      "month": "Setembro",
+      "monthShort": "Set",
+      "volume": 1423500.00,
+      "year": 2024
+    },
+    {
+      "month": "Outubro",
+      "monthShort": "Out",
+      "volume": 1556800.00,
+      "year": 2024
+    },
+    {
+      "month": "Novembro",
+      "monthShort": "Nov",
+      "volume": 1687200.00,
+      "year": 2024
+    },
+    {
+      "month": "Dezembro",
+      "monthShort": "Dez",
+      "volume": 1923400.00,
+      "year": 2024
+    },
+    {
+      "month": "Janeiro",
+      "monthShort": "Jan",
+      "volume": 1623400.00,
+      "year": 2025
+    },
+    {
+      "month": "Fevereiro",
+      "monthShort": "Fev",
+      "volume": 1847500.00,
+      "year": 2025
+    }
+  ],
+  "projectedNext": {
+    "month": "Março",
+    "volume": 1954000.00,
+    "confidence": 0.87
+  }
+}
