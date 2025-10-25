@@ -2,15 +2,14 @@ import { useNavigate } from 'react-router-dom';
 import { Package, TrendingUp, CheckCircle, Calendar } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import '../styles/RetailerDashboard.scss';
+import { SaleItem } from './SalesRegistration';
+import { useStats } from '@/hooks/useStats';
 
 const RetailerDashboard = () => {
   const navigate = useNavigate();
+  const productsList:Array<SaleItem> = JSON.parse(localStorage.getItem('products')) || [];
 
-  const stats = [
-    { label: 'Registros este mês', value: '12', icon: CheckCircle, trend: '+3' },
-    { label: 'Dias sem registro', value: '0', icon: Calendar, trend: '🎉' },
-    { label: 'Pontuação', value: '850', icon: TrendingUp, trend: '+50' },
-  ];
+  const stats = useStats();
 
   return (
     <div className="retailer-page">
@@ -60,30 +59,22 @@ const RetailerDashboard = () => {
         <div className="recent-activity fade-in">
           <h3>Últimos Registros</h3>
           <div className="activity-list">
-            <div className="activity-item">
-              <div className="activity-date">15 Fev</div>
-              <div className="activity-content">
-                <div className="activity-title">Registro de Vendas - 8 itens</div>
-                <div className="activity-meta">R$ 2.340,00 • Processado com sucesso</div>
-              </div>
-              <div className="activity-status success">✓</div>
-            </div>
-            <div className="activity-item">
-              <div className="activity-date">14 Fev</div>
-              <div className="activity-content">
-                <div className="activity-title">Registro de Vendas - 12 itens</div>
-                <div className="activity-meta">R$ 3.120,00 • Processado com sucesso</div>
-              </div>
-              <div className="activity-status success">✓</div>
-            </div>
-            <div className="activity-item">
-              <div className="activity-date">13 Fev</div>
-              <div className="activity-content">
-                <div className="activity-title">Registro de Vendas - 6 itens</div>
-                <div className="activity-meta">R$ 1.890,00 • Processado com sucesso</div>
-              </div>
-              <div className="activity-status success">✓</div>
-            </div>
+            {
+              productsList.map((prd)=>{
+                return(
+                  <div className="activity-item">
+                    <div className="activity-date">
+                      {new Date(prd.saledDay).toLocaleDateString('pt-BR',{day: '2-digit', month:'short'})}
+                    </div>
+                    <div className="activity-content">
+                      <div className="activity-title">{`${prd.productName} - ${prd.quantity} itens`}</div>
+                      <div className="activity-meta">R$ {prd.unitPrice * prd.quantity},00 • Processado com sucesso</div>
+                    </div>
+                    <div className="activity-status success">✓</div>
+                  </div>
+                )
+              })
+            }
           </div>
         </div>
       </div>

@@ -31,7 +31,7 @@ const IndustryDashboard = () => {
             <p>Visão completa do seu Sell-Out</p>
           </div>
           <div className="header-date">
-            <span className="date-badge">Fevereiro 2025</span>
+            <span className="date-badge">Outubro 2025</span>
           </div>
         </div>
 

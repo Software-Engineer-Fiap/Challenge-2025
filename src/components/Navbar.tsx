@@ -17,7 +17,6 @@ const Navbar = ({ userType }: NavbarProps) => {
   };
 
   const navItems = userType === 'retailer' ? [
-    { icon: LayoutDashboard, label: 'Dashboard', path: '/retailer-dashboard' },
   ] : [
     { icon: LayoutDashboard, label: 'Dashboard BI', path: '/industry-dashboard' },
     { icon: TrendingUp, label: 'Insights', path: '/insights' },

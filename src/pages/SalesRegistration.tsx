@@ -1,22 +1,25 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Upload, FileText, Plus, Trash2, Save, ArrowLeft, Loader2 } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import productsData from '../data/mock-registro-produtos.json';
 import '../styles/SalesRegistration.scss';
 
-interface SaleItem {
+export interface SaleItem {
   productId: string;
   productName: string;
   quantity: number;
   unitPrice: number;
+  saledDay: Date;
 }
 
 const SalesRegistration = () => {
   const navigate = useNavigate();
+  const productsList:Array<SaleItem> = JSON.parse(localStorage.getItem('products')) || [];
   const [registrationMethod, setRegistrationMethod] = useState<'upload' | 'manual'>('upload');
   const [isProcessing, setIsProcessing] = useState(false);
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
+  const [step, setStep] = useState<number>(1);
   const [saleItems, setSaleItems] = useState<SaleItem[]>([]);
   const [currentItem, setCurrentItem] = useState({
     productId: '',
@@ -30,10 +33,25 @@ const SalesRegistration = () => {
       setIsProcessing(true);
       setTimeout(() => {
         setIsProcessing(false);
-        alert('✅ Arquivo processado com sucesso! Dados extraídos e prontos para revisão.');
+        setStep( prev => {
+          return ++prev
+        })
+        fillReviewStep();
+        console.log(step)
       }, 3000);
     }
   };
+
+  function fillReviewStep(){
+    setIsProcessing(true);
+    const productIndex:number = Math.floor(Math.random() * productsData.products.length);
+    const productId = productsData.products[productIndex].id;
+    const quantity = Math.floor(Math.random() * 50);
+    
+    setCurrentItem({ productId, quantity})
+    setIsProcessing(false);
+    
+  }
 
   const handleDragOver = (e: React.DragEvent) => {
     e.preventDefault();
@@ -60,14 +78,17 @@ const SalesRegistration = () => {
     }
 
     const product = productsData.products.find(p => p.id === currentItem.productId);
+    const date = new Date();
     if (product) {
       setSaleItems([...saleItems, {
         productId: product.id,
         productName: product.name,
         quantity: currentItem.quantity,
-        unitPrice: product.unitPrice
+        unitPrice: product.unitPrice,
+        saledDay: date
       }]);
       setCurrentItem({ productId: '', quantity: 1 });
+      setStep(1);
     }
   };
 
@@ -81,6 +102,8 @@ const SalesRegistration = () => {
       return;
     }
 
+    const updatedLS = [...productsList, ...saleItems]
+    localStorage.setItem('products',JSON.stringify(updatedLS));
     alert('✅ Registro de vendas enviado com sucesso!');
     navigate('/retailer-dashboard');
   };
@@ -120,30 +143,18 @@ const SalesRegistration = () => {
           </button>
         </div>
 
-        {registrationMethod === 'upload' ? (
+        {registrationMethod === 'upload' && step == 1 ? (
           <div className="upload-section fade-in">
             <div
               className={`upload-zone ${isProcessing ? 'processing' : ''}`}
               onDragOver={handleDragOver}
               onDrop={handleDrop}
             >
-              {isProcessing ? (
+              {isProcessing? (
                 <div className="processing-state">
                   <Loader2 size={64} className="spinner" />
                   <h3>Processando via OCR/IA...</h3>
                   <p>Extraindo dados do documento. Aguarde alguns segundos.</p>
-                </div>
-              ) : uploadedFile ? (
-                <div className="uploaded-state">
-                  <FileText size={64} />
-                  <h3>{uploadedFile.name}</h3>
-                  <p>Arquivo carregado com sucesso!</p>
-                  <button 
-                    className="btn-secondary"
-                    onClick={() => setUploadedFile(null)}
-                  >
-                    Remover arquivo
-                  </button>
                 </div>
               ) : (
                 <div className="empty-state">
@@ -164,7 +175,7 @@ const SalesRegistration = () => {
         ) : (
           <div className="manual-section fade-in">
             <div className="form-card">
-              <h3>Adicionar Item</h3>
+              <h3>{step==1?'Adicionar Item':'Revisar Item' }</h3>
               <div className="form-grid">
                 <div className="form-group">
                   <label>Produto</label>
@@ -195,37 +206,39 @@ const SalesRegistration = () => {
                 Adicionar Item
               </button>
             </div>
+          </div>
+        )}
 
-            {saleItems.length > 0 && (
-              <div className="items-list">
-                <h3>Itens Adicionados ({saleItems.length})</h3>
-                <div className="items-table">
-                  {saleItems.map((item, index) => (
-                    <div key={index} className="item-row">
-                      <div className="item-info">
-                        <div className="item-name">{item.productName}</div>
-                        <div className="item-details">
-                          Qtd: {item.quantity} × R$ {item.unitPrice.toFixed(2)}
-                        </div>
+        {saleItems.length > 0 && (
+          <div className="manual-section fade-in">
+            <div className="items-list">
+              <h3>Itens Adicionados ({saleItems.length})</h3>
+              <div className="items-table">
+                {saleItems.map((item, index) => (
+                  <div key={index} className="item-row">
+                    <div className="item-info">
+                      <div className="item-name">{item.productName}</div>
+                      <div className="item-details">
+                        Qtd: {item.quantity} × R$ {item.unitPrice.toFixed(2)}
                       </div>
-                      <div className="item-total">
-                        R$ {(item.quantity * item.unitPrice).toFixed(2)}
-                      </div>
-                      <button
-                        className="btn-remove"
-                        onClick={() => handleRemoveItem(index)}
-                      >
-                        <Trash2 size={18} />
-                      </button>
                     </div>
-                  ))}
-                </div>
-                <div className="total-summary">
-                  <span>Total:</span>
-                  <strong>R$ {totalValue.toFixed(2)}</strong>
-                </div>
+                    <div className="item-total">
+                      R$ {(item.quantity * item.unitPrice).toFixed(2)}
+                    </div>
+                    <button
+                      className="btn-remove"
+                      onClick={() => handleRemoveItem(index)}
+                    >
+                      <Trash2 size={18} />
+                    </button>
+                  </div>
+                ))}
               </div>
-            )}
+              <div className="total-summary">
+                <span>Total:</span>
+                <strong>R$ {totalValue.toFixed(2)}</strong>
+              </div>
+            </div>
           </div>
         )}
 
