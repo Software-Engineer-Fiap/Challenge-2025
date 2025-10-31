@@ -29,7 +29,7 @@ const Navbar = ({ userType }: NavbarProps) => {
         <Link to={userType === 'retailer' ? '/retailer-dashboard' : '/industry-dashboard'} className="navbar-brand">
           <Building2 size={32} />
           <span className="brand-text">
-            ASTÉRIA <span className="brand-accent">Connect</span>
+            Bridge<span className="brand-accent">One</span>
           </span>
         </Link>
 
