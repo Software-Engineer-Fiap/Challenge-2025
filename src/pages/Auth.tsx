@@ -34,7 +34,7 @@ const Auth = () => {
               <Building2 size={48} />
             </div>
             <h1 className="brand-title">
-              ASTÉRIA <span className="text-gradient">Connect</span>
+              Bridge<span className="text-gradient">One</span>
             </h1>
             <p className="brand-subtitle">
               Inteligência em Sell-Out para Varejo e Indústria
